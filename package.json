@@ -1,0 +1,28 @@
+{
+  "name": "babar",
+  "version": "0.0.1",
+  "description": "CLI bar charts",
+  "main": "lib/babar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stephan83/babar.git"
+  },
+  "keywords": [
+    "cli",
+    "bar",
+    "charts",
+    "graph",
+    "ascii"
+  ],
+  "author": "Stephan Florquin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stephan83/babar/issues"
+  },
+  "dependencies": {
+    "colors": "~0.6.2"
+  }
+}
