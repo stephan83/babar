@@ -20,6 +20,7 @@ While it isn't an advanced charting library, it can be useful to get a rought id
 
 ### Limitations:
 
+* limited options
 * only bar charts
 * only one data set per graph
 * limited accuracy
@@ -28,7 +29,7 @@ While it isn't an advanced charting library, it can be useful to get a rought id
 
 ## Sample output
 
-[insert screenshots here]
+![Examples]((https://github.com/stephan83/babar/raw/master/img/sample.png)
 
 ## Installation
 
