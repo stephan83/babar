@@ -29,7 +29,7 @@ While it isn't an advanced charting library, it can be useful to get a rought id
 
 ## Sample output
 
-![Examples]((https://github.com/stephan83/babar/raw/master/img/sample.png)
+![Sample](https://github.com/stephan83/babar/raw/master/img/sample.png)
 
 ## Installation
 
