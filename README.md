@@ -4,6 +4,8 @@
 
 Babar is a simple node.js library to draw bar charts in your console.
 
+![Sample](https://github.com/stephan83/babar/raw/master/img/sample.png)
+
 While it isn't an advanced charting library, it can be useful to get a rought idea of:
 
 * whether some data is random or not
@@ -26,10 +28,6 @@ While it isn't an advanced charting library, it can be useful to get a rought id
 * limited accuracy
 * only numerical labels
 * only linear axes
-
-## Sample output
-
-![Sample](https://github.com/stephan83/babar/raw/master/img/sample.png)
 
 ## Installation
 
