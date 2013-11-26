@@ -41,7 +41,7 @@ Babar exposes a function whose signature expects at least an array of points, wh
 
     console.log(babar([[0, 1], [1, 5], [2, 5], [3, 1], [4, 6]]));
 
-While it does it best to render the data automatically, you can also pass along some options.
+While it does its best to render the data automatically, you can also pass along some options.
 
     var babar = require('babar');
 
@@ -59,8 +59,8 @@ While it does it best to render the data automatically, you can also pass along 
 * **color="cyan"**: specify a color ('yellow', 'cyan', 'white', 'magenta', 'green', 'red', 'grey', 'blue', or 'ascii')
 * **width=80**: output will fit in specified width
 * **height=15**: output will fit in specified height
-* **xFractions**: number of fractions for x labels, does it best by default
-* **yFractions**: number of fractions for y labels, does it best by default
+* **xFractions**: number of fractions for x labels, does its best by default
+* **yFractions**: number of fractions for y labels, does its best by default
 
 ## License
 

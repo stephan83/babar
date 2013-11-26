@@ -8,7 +8,7 @@ tc = (x, c) -> Array(x + 1).join c
 # ensure value between 2 extremes
 minMax = (min, max, val) -> Math.max min, Math.min max, val
 
-# round to a string width fixed fraction length
+# round to a string with fixed fraction length
 roundToFixed = (val, fractions) ->
   m = Math.pow 10, fractions
   (Math.round(m * val) / m).toFixed fractions
@@ -17,7 +17,7 @@ roundToFixed = (val, fractions) ->
 pointsMinMaxUniqueX = (points) ->
   valX = []
 
-  [minX, maxX, minY, maxY, uniqueX] = points.reduce (prev, point) ->
+  [minX, maxX, minY, maxY] = points.reduce (prev, point) ->
     [
       Math.min(prev[0], point[0]), Math.max(prev[1], point[0])
       Math.min(prev[2], point[1]), Math.max(prev[3], point[1])
