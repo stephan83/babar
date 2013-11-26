@@ -18,10 +18,10 @@ pointsMinMaxUniqueX = (points) ->
   valX = []
 
   [minX, maxX, minY, maxY] = points.reduce (prev, point) ->
+    valX.push point[0] unless point[0] in valX
     [
       Math.min(prev[0], point[0]), Math.max(prev[1], point[0])
       Math.min(prev[2], point[1]), Math.max(prev[3], point[1])
-      valX.push point[0] unless point[0] in valX
     ]
   , [Infinity, -Infinity, Infinity, -Infinity]
 
