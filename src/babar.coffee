@@ -144,7 +144,7 @@ module.exports = (points, options={}) ->
   lblXW = 0
 
   for u in [0...numBkts]
-    lbl = 1 + roundToFixed minX + u * diffX / (numBkts - 1), xFractions
+    lbl = roundToFixed minX + u * diffX / (numBkts - 1), xFractions
     lblXW = Math.max lblXW, lbl.length
 
   lblXN = numBkts
