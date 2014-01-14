@@ -71,14 +71,19 @@ createBkt = (points, numBkts, minX, diffX) ->
     u = Math.min numBkts - 1, Math.floor (x - minX) / diffX * numBkts
     bkt[u] ?= []
     bkt[u].push p
+  (bkt[i] = [] unless bkt[i]) for i in [0...bkt.length]
   bkt
 
 # average points in buckets
 avgBkt = (bkt) ->
+  prev = 0
   for values in bkt
-    1 / values.length * values.reduce (prev, curr) ->
-      prev + curr[1]
-    , 0
+    if values.length
+      prev = 1 / values.length * values.reduce (prev, curr) ->
+        prev + curr[1]
+      , 0
+    else
+      prev
 
 # min max values from buckets
 minMaxBkt = (bkt) ->
