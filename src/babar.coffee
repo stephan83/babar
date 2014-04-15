@@ -8,11 +8,6 @@ tc = (x, c) -> Array(x + 1).join c
 # ensure value between 2 extremes
 minMax = (min, max, val) -> Math.max min, Math.min max, val
 
-# round to a string with fixed fraction length
-roundToFixed = (val, fractions) ->
-  m = Math.pow 10, fractions
-  (Math.round(m * val) / m).toFixed fractions
-
 # get minX, maxX, minY, maxY, and # of unique x values from points
 pointsMinMaxUniqueX = (points) ->
   valX = []
@@ -122,8 +117,8 @@ module.exports = (points, options={}) ->
   yFractions ?= minMax 0, 8, Math.log(height / diffY * 5) / Math.LN10
 
   # max label width
-  lblYW = 1 + Math.max roundToFixed(minY, yFractions).length,
-                       roundToFixed(maxY, yFractions).length
+  lblYW = 1 + Math.max minY.toFixed(yFractions).length,
+                       maxY.toFixed(yFractions).length
 
   # real width of graph
   width -= lblYW
@@ -142,14 +137,14 @@ module.exports = (points, options={}) ->
 
   # prerender y labels
   for v in [height - 1..0]
-    lbl = roundToFixed min + diff * v / (height - 1), yFractions
+    lbl = (min + diff * v / (height - 1)).toFixed yFractions
     lblY.unshift lbl
 
   # compute x labels length and incrementor
   lblXW = 0
 
   for u in [0...numBkts]
-    lbl = roundToFixed minX + u * diffX / (numBkts - 1), xFractions
+    lbl = (minX + u * diffX / (numBkts - 1)).toFixed xFractions
     lblXW = Math.max lblXW, lbl.length
 
   lblXN = numBkts
@@ -175,7 +170,7 @@ module.exports = (points, options={}) ->
   # render x labels
   for x in [0...lblXN]
     u = x * lblXI
-    lbl = roundToFixed minX + u * diffX / (numBkts - 1), xFractions
+    lbl = (minX + u * diffX / (numBkts - 1)).toFixed xFractions
     out += lbl
     out += tc bktW * lblXI - lbl.length, ' '
 
