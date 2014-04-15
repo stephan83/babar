@@ -40,7 +40,7 @@ drawRowChart = (r, bkt, bktW, c, h) ->
         if c is 'ascii'
           tc bktW, ' '
         else
-          tc(Math.max(1, bktW - 1), '_'[c]) + 
+          tc(Math.max(1, bktW - 1), '_'[c]) +
             if bktW > 1 then '_'.black else ''
       when 3 # row is in bar
         if c is 'ascii'
