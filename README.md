@@ -31,27 +31,32 @@ While it isn't an advanced charting library, it can be useful to get a rought id
 
 ## Installation
 
-    npm install babar
+```bash
+npm install babar
+```
 
 ## Usage
 
 Babar exposes a function whose signature expects at least an array of points, where a point is an array of two values `[x, y]`. It returns a string representation of the data which can be output to your console.
 
-    var babar = require('babar');
-
-    console.log(babar([[0, 1], [1, 5], [2, 5], [3, 1], [4, 6]]));
+```js
+var babar = require('babar');
+console.log(babar([[0, 1], [1, 5], [2, 5], [3, 1], [4, 6]]));
+```
 
 While it does its best to render the data automatically, you can also pass along some options.
 
-    var babar = require('babar');
+```js
+var babar = require('babar');
 
-    console.log(babar([[0, 1], [1, 5], [2, 5], [3, 1], [4, 6]], {
-      color: 'green',
-      width: 40,
-      height: 10,
-      color: 'green',
-      yFractions: 1
-    }));
+console.log(babar([[0, 1], [1, 5], [2, 5], [3, 1], [4, 6]], {
+  color: 'green',
+  width: 40,
+  height: 10,
+  color: 'green',
+  yFractions: 1
+}));
+```
 
 ## Options
 
