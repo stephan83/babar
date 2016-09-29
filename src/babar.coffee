@@ -96,13 +96,14 @@ bucketize = (points, numBkts, minX, diffX, h) ->
 
 # expose main func
 module.exports = (points, options={}) ->
-  [caption, color, width, height, xFractions, yFractions] = [
+  [caption, color, width, height, xFractions, yFractions, numBkts] = [
     options.caption
     options.color ? 'cyan'
     options.width ? 80
     options.height ? 15
     options.xFractions
     options.yFractions
+    options.buckets
   ]
 
   require 'colors' unless color is 'ascii'
@@ -124,7 +125,7 @@ module.exports = (points, options={}) ->
   width -= lblYW
 
   # optimum buckets length and width
-  numBkts = Math.min uniqueX, width - lblYW
+  numBkts = Math.min numBkts ? uniqueX, width - lblYW
   bktW = Math.floor (width - lblYW) / numBkts
 
   # guess best x fraction length
