@@ -53,6 +53,7 @@ console.log(babar([[0, 1], [1, 5], [2, 5], [3, 1], [4, 6]], {
   color: 'green',
   width: 40,
   height: 10,
+  maxY: 10,
   yFractions: 1
 }));
 ```
@@ -65,6 +66,10 @@ console.log(babar([[0, 1], [1, 5], [2, 5], [3, 1], [4, 6]], {
 * **height=15**: output will fit in specified height
 * **xFractions**: number of fractions for x labels, does its best by default
 * **yFractions**: number of fractions for y labels, does its best by default
+* **minX**: minimum x value for x axle
+* **maxX**: maximum x value for x axle
+* **minY**: minimum y value for y axle (negative values not supported yet)
+* **maxY**: maximum y value for y axle
 
 ## License
 
