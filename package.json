@@ -4,6 +4,7 @@
   "description": "CLI bar charts",
   "main": "lib/babar.js",
   "scripts": {
+    "develop": "./node_modules/coffee-script/bin/coffee --watch -o lib/ -c src/babar.coffee",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
