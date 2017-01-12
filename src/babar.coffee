@@ -88,26 +88,42 @@ minMaxBkt = (bkt) ->
 normalizeBkt = (bkt, min, diff, h) -> ((v - min) / diff * h for v in bkt)
 
 # put points in buckets
-bucketize = (points, numBkts, minX, diffX, h) ->
+bucketize = (points, numBkts, minX, diffX, minY, maxY, h) ->
   bkt = avgBkt createBkt points, numBkts, minX, diffX
   {min, max} = minMaxBkt bkt
+  if maxY
+    max = maxY
+  if minY
+    min = minY
   diff = max - min
   {bkt: normalizeBkt(bkt, min, diff, h), min, max, diff}
 
 # expose main func
 module.exports = (points, options={}) ->
-  [caption, color, width, height, xFractions, yFractions] = [
+  [caption, color, width, height, xFractions, yFractions, minX, maxX, minY, maxY] = [
     options.caption
     options.color ? 'cyan'
     options.width ? 80
     options.height ? 15
     options.xFractions
     options.yFractions
+    options.minX
+    options.maxX
+    options.minY
+    options.maxY
   ]
 
   require 'colors' unless color is 'ascii'
 
   {minX, maxX, minY, maxY, uniqueX} = pointsMinMaxUniqueX points
+  if options.minX
+    minX = options.minX
+  if options.maxX
+    maxX = options.maxX
+  if options.minY
+    minY = options.minY
+  if options.maxY
+    maxY = options.maxY
   [diffX, diffY] = [maxX - minX, maxY - minY]
 
   # real height of graph
@@ -131,7 +147,7 @@ module.exports = (points, options={}) ->
   xFractions ?= minMax 0, 8, Math.log(numBkts / diffX * 5) / Math.LN10
 
   # fill buckets
-  {bkt, min, max, diff} = bucketize points, numBkts, minX, diffX, height
+  {bkt, min, max, diff} = bucketize points, numBkts, minX, diffX, minY, maxY, height
 
   lblY = []
 
