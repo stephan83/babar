@@ -4,7 +4,13 @@
   "description": "CLI bar charts",
   "main": "lib/babar.js",
   "scripts": {
-    "develop": "coffee --watch -o lib/ -c src/babar.coffee",
+    "build:lib": "coffee -o lib -c src/babar.coffee",
+    "clean": "rimraf lib coverage",
+    "preversion": "npm run clean",
+    "version": "npm run build:lib",
+    "postversion": "git push && git push --tags && npm run clean",
+    "prepublish": "npm run clean && npm run build:lib",
+    "dev": "coffee --watch -o lib/ -c src/babar.coffee",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +33,7 @@
     "colors": "~0.6.2"
   },
   "devDependencies": {
-    "coffee-script": "~1.6.3"
+    "coffee-script": "~1.6.3",
+    "rimraf": "^2.5.4"
   }
 }
