@@ -30,7 +30,7 @@ drawRowLabel = (r, lblY, lblYW) ->
 # draw row chart part
 drawRowChart = (r, bkt, bktW, c, g, h) ->
   (for v in bkt
-    switch ((r > v) and 1) or (((r > v-1 or r is v) or r is h-1) and 2) or 3
+    switch ((r > v) and 1) or ((r >= v - 0.25) and 2) or ((r > v - 0.75) and 3) or 4
       when 1 # row is over bar
         if c is 'ascii'
           tc bktW, ' '
@@ -42,7 +42,13 @@ drawRowChart = (r, bkt, bktW, c, g, h) ->
         else
           tc(Math.max(1, bktW - 1), '_'[c]) +
             if bktW > 1 then '_'[g] else ''
-      when 3 # row is in bar
+      when 3 # row is less than half into the bar
+        if c is 'ascii'
+          tc bktW, ' '
+        else
+          tc(Math.max(1, bktW - 1), '▄'[c]) +
+            if bktW > 1 then '_'[g] else ''
+      when 4 # row is in bar
         if c is 'ascii'
           tc bktW, 'X'
         else
