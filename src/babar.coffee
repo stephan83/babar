@@ -28,35 +28,35 @@ drawRowLabel = (r, lblY, lblYW) ->
   "#{tc lblYW - lbl.length - 1, ' '}#{lbl}"
 
 # draw row chart part
-drawRowChart = (r, bkt, bktW, c, h) ->
+drawRowChart = (r, bkt, bktW, c, g, h) ->
   (for v in bkt
     switch ((r > v) and 1) or (((r > v-1 or r is v) or r is h-1) and 2) or 3
       when 1 # row is over bar
         if c is 'ascii'
           tc bktW, ' '
         else
-          tc bktW, '_'.black
+          tc bktW, '_'[g]
       when 2 # row is top of bar
         if c is 'ascii'
           tc bktW, ' '
         else
           tc(Math.max(1, bktW - 1), '_'[c]) +
-            if bktW > 1 then '_'.black else ''
+            if bktW > 1 then '_'[g] else ''
       when 3 # row is in bar
         if c is 'ascii'
           tc bktW, 'X'
         else
           tc(Math.max(1, bktW - 1), ' '[c].inverse) +
-            if bktW > 1 then '_'.black else ''
+            if bktW > 1 then '_'[g] else ''
   ).join ''
 
 # draw full row
-drawRow = (r, lblY, lblYW, bkt, bktW, c, h) ->
-  "#{drawRowLabel r, lblY, lblYW} #{drawRowChart r, bkt, bktW, c, h}"
+drawRow = (r, lblY, lblYW, bkt, bktW, c, g, h) ->
+  "#{drawRowLabel r, lblY, lblYW} #{drawRowChart r, bkt, bktW, c, g, h}"
 
 # draw chart minus x labels
-drawChart = (h, lblY, lblYW, bkt, bktW, c) ->
-  (drawRow r, lblY, lblYW, bkt, bktW, c, h for r in [h - 1..0]).join '\n'
+drawChart = (h, lblY, lblYW, bkt, bktW, c, g) ->
+  (drawRow r, lblY, lblYW, bkt, bktW, c, g, h for r in [h - 1..0]).join '\n'
 
 # put points in buckets
 createBkt = (points, numBkts, minX, diffX) ->
@@ -100,9 +100,10 @@ bucketize = (points, numBkts, minX, diffX, minY, maxY, h) ->
 
 # expose main func
 module.exports = (points, options={}) ->
-  [caption, color, width, height, xFractions, yFractions, minX, maxX, minY, maxY] = [
+  [caption, color, grid, width, height, xFractions, yFractions, minX, maxX, minY, maxY] = [
     options.caption
     options.color ? 'cyan'
+    options.grid ? 'black'
     options.width ? 80
     options.height ? 15
     options.xFractions
@@ -179,7 +180,7 @@ module.exports = (points, options={}) ->
     out += '\n'
 
   # render chart
-  out += drawChart(height, lblY, lblYW, bkt, bktW, color) + '\n'
+  out += drawChart(height, lblY, lblYW, bkt, bktW, color, grid) + '\n'
 
   out += tc lblYW, ' '
 

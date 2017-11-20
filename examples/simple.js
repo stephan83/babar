@@ -4,6 +4,7 @@ console.log(babar([[0, 1], [1, 5], [2, 5], [3, 1], [4, 6]]));
 
 console.log(babar([[0, 1], [1, 5], [2, 5], [3, 1], [4, 6]], {
   color: 'green',
+  grid: 'grey',
   width: 40,
   height: 10,
   yFractions: 1
@@ -20,6 +21,7 @@ console.log(babar([
 	[7, 21]
 ], {
   width: 80,
+  grid: 'blue',
   height: 10,
   color: 'yellow',
   maxY: 100
