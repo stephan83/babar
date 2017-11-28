@@ -102,7 +102,7 @@ bucketize = (points, numBkts, minX, diffX, minY, maxY, h) ->
   if minY
     min = minY
   diff = max - min
-  {bkt: normalizeBkt(bkt, min, diff, h), min, max, diff}
+  {bkt: normalizeBkt(bkt, min, diff, h - 1), min, max, diff}
 
 # expose main func
 module.exports = (points, options={}) ->
