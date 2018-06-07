@@ -173,7 +173,8 @@ module.exports = (points, options={}) ->
   lblXN = numBkts
   lblXI = 1
 
-  while lblXN * lblXW >= numBkts * bktW
+  # + 1 to have at least one space between label
+  while (lblXN + 1) * lblXW >= numBkts * bktW
     lblXN = Math.floor lblXN / 2
     lblXI *= 2
 
