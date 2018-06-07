@@ -147,8 +147,8 @@ module.exports = (points, options={}) ->
   width -= lblYW
 
   # optimum buckets length and width
-  numBkts = Math.min uniqueX, width - lblYW
-  bktW = Math.floor (width - lblYW) / numBkts
+  numBkts = Math.min uniqueX, width
+  bktW = Math.floor width / numBkts
 
   # guess best x fraction length
   xFractions ?= minMax 0, 8, Math.log(numBkts / diffX * 5) / Math.LN10
