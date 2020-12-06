@@ -62,6 +62,7 @@ console.log(babar([[0, 1], [1, 5], [2, 5], [3, 1], [4, 6]], {
 
 * **caption**: specify a caption to display over the bar chart
 * **color="cyan"**: specify a color ('yellow', 'cyan', 'white', 'magenta', 'green', 'red', 'grey', 'blue', or 'ascii')
+* **grid="black"**: specify a color ('yellow', 'cyan', 'white', 'magenta', 'green', 'red', 'grey', 'blue')
 * **width=80**: output will fit in specified width
 * **height=15**: output will fit in specified height
 * **xFractions**: number of fractions for x labels, does its best by default
