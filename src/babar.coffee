@@ -97,9 +97,9 @@ normalizeBkt = (bkt, min, diff, h) -> ((v - min) / diff * h for v in bkt)
 bucketize = (points, numBkts, minX, diffX, minY, maxY, h) ->
   bkt = avgBkt createBkt points, numBkts, minX, diffX
   {min, max} = minMaxBkt bkt
-  if maxY
+  if maxY?
     max = maxY
-  if minY
+  if minY?
     min = minY
   diff = max - min
   {bkt: normalizeBkt(bkt, min, diff, h - 1), min, max, diff}
@@ -123,13 +123,13 @@ module.exports = (points, options={}) ->
   require 'colors' unless color is 'ascii'
 
   {minX, maxX, minY, maxY, uniqueX} = pointsMinMaxUniqueX points
-  if options.minX
+  if options.minX?
     minX = options.minX
-  if options.maxX
+  if options.maxX?
     maxX = options.maxX
-  if options.minY
+  if options.minY?
     minY = options.minY
-  if options.maxY
+  if options.maxY?
     maxY = options.maxY
   [diffX, diffY] = [maxX - minX, maxY - minY]
 
