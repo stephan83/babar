@@ -4,7 +4,7 @@
 
 Babar is a simple node.js library to draw bar charts in your console.
 
-![Sample](https://github.com/stephan83/babar/raw/master/img/sample.png)
+![Sample](img/sample.png)
 
 While it isn't an advanced charting library, it can be useful to get a rought idea of:
 
