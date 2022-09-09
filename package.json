@@ -30,10 +30,10 @@
     "url": "https://github.com/stephan83/babar/issues"
   },
   "dependencies": {
-    "colors": "~0.6.2"
+    "colors": "~1.4.0"
   },
   "devDependencies": {
-    "coffee-script": "~1.6.3",
-    "rimraf": "^2.5.4"
+    "coffeescript": "~1.6.3",
+    "rimraf": "^3.0.2"
   }
 }
