@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+import { bold } from './ansi.js';
 import { validatePoints, validateOptions } from './validate.js';
 import { computeStats, bucketize, bucketizeCategorical } from './buckets.js';
 import { drawChart, drawHorizontalChart } from './draw.js';
@@ -121,7 +121,7 @@ export default function babar(points: AnyPoint[], options: Options = {}): string
   let out = '';
   if (caption !== undefined) {
     out += repeat(lblYW, ' ');
-    out += color === 'ascii' ? caption : chalk.bold(caption);
+    out += color === 'ascii' ? caption : bold(caption);
     out += '\n';
   }
 
@@ -180,7 +180,7 @@ function renderCategorical(
 
     let out = '';
     if (caption !== undefined) {
-      out += color === 'ascii' ? caption : chalk.bold(caption);
+      out += color === 'ascii' ? caption : bold(caption);
       out += '\n';
     }
     out += drawHorizontalChart(barWidths, labels, maxLabelW, barAreaW, color, grid, valLabels);
@@ -211,7 +211,7 @@ function renderCategorical(
   let out = '';
   if (caption !== undefined) {
     out += repeat(lblYW, ' ');
-    out += color === 'ascii' ? caption : chalk.bold(caption);
+    out += color === 'ascii' ? caption : bold(caption);
     out += '\n';
   }
 
@@ -295,15 +295,10 @@ function renderHorizontalNumeric(
 
   let out = '';
   if (caption !== undefined) {
-    out += color === 'ascii' ? caption : chalk.bold(caption);
+    out += color === 'ascii' ? caption : bold(caption);
     out += '\n';
   }
   out += drawHorizontalChart(bkt, labels, maxLabelW, barAreaW, color, grid, valLabels, refCol);
   return out;
 }
 
-// Allow `require('babar')` to work directly without `.default`
-if (typeof module !== 'undefined') {
-  module.exports = babar;
-  module.exports.default = babar;
-}

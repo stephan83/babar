@@ -6,7 +6,9 @@
   "types": "lib/babar.d.ts",
   "type": "commonjs",
   "scripts": {
-    "build": "tsc",
+    "build": "npm run build:bundle && npm run build:types",
+    "build:bundle": "esbuild src/babar.ts --bundle --platform=node --format=cjs --minify --footer:js=\"module.exports=module.exports.default??module.exports;\" --outfile=lib/babar.js",
+    "build:types": "tsc",
     "clean": "rimraf lib coverage",
     "preversion": "npm run clean",
     "version": "npm run build",
@@ -32,13 +34,11 @@
   "bugs": {
     "url": "https://github.com/stephan83/babar/issues"
   },
-  "dependencies": {
-    "chalk": "^4.1.2"
-  },
   "devDependencies": {
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.28.0",
     "rimraf": "^3.0.2",
     "typescript": "^5.4.5",
-    "vitest": "^1.6.0",
-    "@types/node": "^20.0.0"
+    "vitest": "^1.6.0"
   }
 }

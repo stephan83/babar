@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+import { colorize } from './ansi.js';
 import type { Color } from './types.js';
 
 // 8-level vertical block characters: index 0 = empty, 8 = full block
@@ -10,12 +10,6 @@ const REF_CHAR_ASCII = '-';
 function repeat(n: number, ch: string): string {
   if (n <= 0) return '';
   return ch.repeat(n);
-}
-
-function colorize(str: string, color: Color): string {
-  if (color === 'ascii') return str;
-  const fn = (chalk as unknown as Record<string, (s: string) => string>)[color];
-  return fn ? fn(str) : str;
 }
 
 function blockChar(fraction: number): string {
