@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { computeStats, createBuckets, avgBuckets, normalizeBuckets, bucketize } from '../src/buckets.js';
+import { computeStats, createBuckets, aggregateBuckets, normalizeBuckets, bucketize } from '../src/buckets.js';
 import type { Point } from '../src/types.js';
 
 const pts: Point[] = [[0, 1], [1, 5], [2, 5], [3, 1], [4, 6]];
@@ -35,15 +35,15 @@ describe('createBuckets', () => {
   });
 });
 
-describe('avgBuckets', () => {
+describe('aggregateBuckets', () => {
   it('averages values correctly', () => {
-    const result = avgBuckets([[[0, 2], [0, 4]], [[1, 6]]]);
+    const result = aggregateBuckets([[[0, 2], [0, 4]], [[1, 6]]], 'avg');
     expect(result[0]).toBe(3);
     expect(result[1]).toBe(6);
   });
 
   it('carries forward previous value for empty buckets', () => {
-    const result = avgBuckets([[[0, 10]], [], [[2, 20]]]);
+    const result = aggregateBuckets([[[0, 10]], [], [[2, 20]]], 'avg');
     expect(result[1]).toBe(10);
   });
 });

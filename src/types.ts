@@ -1,4 +1,6 @@
 export type Point = [number, number];
+export type CategoricalPoint = [string, number];
+export type AnyPoint = Point | CategoricalPoint;
 
 export type Color =
   | 'ascii'
@@ -13,6 +15,10 @@ export type Color =
   | 'grey'
   | 'gray';
 
+export type Aggregation = 'avg' | 'sum' | 'min' | 'max' | 'last' | 'count';
+export type YScale = 'linear' | 'log';
+export type Direction = 'vertical' | 'horizontal';
+
 export interface Options {
   caption?: string;
   color?: Color;
@@ -25,4 +31,9 @@ export interface Options {
   maxX?: number;
   minY?: number;
   maxY?: number;
+  // new options
+  aggregation?: Aggregation;
+  yScale?: YScale;
+  refY?: number;
+  direction?: Direction;
 }
