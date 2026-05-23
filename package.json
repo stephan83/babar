@@ -1,17 +1,20 @@
 {
   "name": "babar",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "CLI bar charts",
   "main": "lib/babar.js",
+  "types": "lib/babar.d.ts",
+  "type": "commonjs",
   "scripts": {
-    "build:lib": "coffee -o lib -c src/babar.coffee",
+    "build": "tsc",
     "clean": "rimraf lib coverage",
     "preversion": "npm run clean",
-    "version": "npm run build:lib",
+    "version": "npm run build",
     "postversion": "git push && git push --tags && npm run clean",
-    "prepublish": "npm run clean && npm run build:lib",
-    "dev": "coffee --watch -o lib/ -c src/babar.coffee",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "npm run clean && npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "repository": {
     "type": "git",
@@ -30,10 +33,12 @@
     "url": "https://github.com/stephan83/babar/issues"
   },
   "dependencies": {
-    "colors": "~1.4.0"
+    "chalk": "^4.1.2"
   },
   "devDependencies": {
-    "coffeescript": "~1.6.3",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0",
+    "@types/node": "^20.0.0"
   }
 }
