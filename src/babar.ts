@@ -255,10 +255,19 @@ function renderHorizontalNumeric(
   const yFractions = options.yFractions ?? 1;
   const xFractions = options.xFractions ?? 0;
 
-  const maxLabelW = (minX).toFixed(xFractions).length;
-  const barAreaW = width - maxLabelW - 2 - (effectiveMaxY.toFixed(yFractions).length + 1);
-
   const numBkts = Math.max(1, Math.min(stats.uniqueX, height));
+
+  // Build X labels first so we can measure the longest one
+  const labels: string[] = [];
+  for (let u = 0; u < numBkts; u++) {
+    labels.push((minX + u * (diffX || 0) / Math.max(1, numBkts - 1)).toFixed(xFractions));
+  }
+  const maxLabelW = Math.max(...labels.map(l => l.length));
+  const valLabelW = Math.max(
+    effectiveMinY.toFixed(yFractions).length,
+    effectiveMaxY.toFixed(yFractions).length,
+  );
+  const barAreaW = Math.max(1, width - maxLabelW - 2 - valLabelW - 1);
 
   const { bkt, min, max, diff } = bucketize(
     points, numBkts, minX, diffX, options.minY, options.maxY, barAreaW + 1, aggregation, yScale,
@@ -274,12 +283,6 @@ function renderHorizontalNumeric(
     } else {
       refCol = (options.refY - min) / (diff || 1) * barAreaW;
     }
-  }
-
-  // X-axis labels (one per bucket row)
-  const labels: string[] = [];
-  for (let u = 0; u < numBkts; u++) {
-    labels.push((minX + u * (diffX || 0) / Math.max(1, numBkts - 1)).toFixed(xFractions));
   }
 
   // Value labels per bucket
