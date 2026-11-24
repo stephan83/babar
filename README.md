@@ -35,7 +35,7 @@ While it isn't an advanced charting library, it can be useful to get a rought id
 npm install babar
 ```
 
-Babar needs Node 26.13 or later.
+Babar needs Node 22 or later.
 
 ## Usage
 
@@ -417,7 +417,7 @@ The charts drawn with the options of 0.2.3 are byte-identical wherever 0.2.3 ret
 * Of the generated styles of `colors`, `random`, `trap` and `zalgo` no longer change the characters or their colour, and the names of a theme set with `colors.setTheme` are not known. `zebra`, `strip`, `stripColors`, `rainbow`, `america` and all the static styles draw what they drew.
 * An unknown `color` no longer throws on a bar that has a body: the body is drawn unstyled.
 * `width` and `height` are limited to 1000 characters; `Infinity` and `-Infinity` no longer hang.
-* The package needs Node 26.13 or later (`engines` says so, and the bundle is built for it); 0.2.3 declared no minimum.
+* The package needs Node 22 or later (`engines` says so, and the bundle is built for it); 0.2.3 declared no minimum.
 
 ## Changes from the TypeScript rewrite (`migrate_typescript`)
 
@@ -431,13 +431,13 @@ The charts drawn with the options of 0.2.3 are byte-identical wherever 0.2.3 ret
 
 ## Contributing
 
-Working on babar needs Node 26.13.1: it is pinned in `.mise.toml` and `.nvmrc` (`mise install` or `nvm use`), and `devEngines` in `package.json` makes npm refuse to run the scripts with another version. That exact version only concerns development: the published package declares `engines.node >= 26.13`, is built for Node 26 and has no dependency.
+Working on babar needs Node 26.13.1: it is pinned in `.mise.toml` and `.nvmrc` (`mise install` or `nvm use`), and `devEngines` in `package.json` makes npm refuse to run the scripts with another version. That exact version only concerns development: the published package declares `engines.node >= 22`, is built for Node 22, typechecks against `@types/node` 22 and has no dependency. The tests also pass on Node 22 when run with `node_modules/.bin/vitest` (npm scripts need the pinned version).
 
 ## Development
 
 The npm package contains `lib/babar.js` (the minified bundle), `lib/babar.d.ts`, `package.json`, the README and the license. The source (`src/babar.ts`), the examples, the tests and the screenshot are in the repository.
 
-The bundle is built with `--target=node26`, the `engines` of the package (`>=26.13`).
+The bundle is built with `--target=node22`, the `engines` of the package (`>=22`).
 
 ```bash
 npm install

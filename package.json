@@ -9,7 +9,7 @@
     "lib"
   ],
   "engines": {
-    "node": ">=26.13"
+    "node": ">=22"
   },
   "devEngines": {
     "runtime": {
@@ -20,7 +20,7 @@
   },
   "scripts": {
     "build": "npm run build:bundle && npm run build:types",
-    "build:bundle": "esbuild src/babar.ts --bundle --platform=node --format=cjs --minify --target=node26 --footer:js=\"module.exports.babar=module.exports.default=module.exports;\" --outfile=lib/babar.js",
+    "build:bundle": "esbuild src/babar.ts --bundle --platform=node --format=cjs --minify --target=node22 --footer:js=\"module.exports.babar=module.exports.default=module.exports;\" --outfile=lib/babar.js",
     "build:types": "tsc",
     "typecheck": "tsc -p tsconfig.test.json",
     "clean": "rimraf lib coverage",
@@ -48,7 +48,7 @@
     "url": "https://github.com/stephan83/babar/issues"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
+    "@types/node": "^22.20.5",
     "esbuild": "^0.28.0",
     "rimraf": "^3.0.2",
     "typescript": "^5.4.5",
