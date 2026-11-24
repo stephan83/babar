@@ -1,0 +1,5 @@
+[settings]
+idiomatic_version_file_enable_tools = ["node"]
+
+[tools]
+node = "26.13.1"

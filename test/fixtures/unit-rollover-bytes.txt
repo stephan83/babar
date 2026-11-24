@@ -1,0 +1,4 @@
+1MiB                         
+  0B             XXXXXXXXXXXX
+     0.0         1.0         
+  min 0B  avg 512KiB  max 1MiB

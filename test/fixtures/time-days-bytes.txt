@@ -1,0 +1,9 @@
+103.3MiB                                         
+ 86.1MiB                                       XX
+ 68.9MiB                                   XXXXXX
+ 51.6MiB                                 XXXXXXXX
+ 34.4MiB                           XXXXXXXXXXXXXX
+ 17.2MiB                       XXXXXXXXXXXXXXXXXX
+      0B               XXXXXXXXXXXXXXXXXXXXXXXXXX
+         30/01 00:00     01/02 00:00     
+         min 0B  avg 35.3MiB  max 103.3MiB

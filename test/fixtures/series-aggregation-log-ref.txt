@@ -1,0 +1,8 @@
+1000                   
+ 398              OOOO 
+ 158 -------------OOOO-
+  63              OOOO 
+  25          XXXXOOOO 
+  10          XXXXOOOO 
+     0.0      1.0      
+     X a  O b

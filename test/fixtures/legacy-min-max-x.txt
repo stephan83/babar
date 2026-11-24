@@ -1,0 +1,8 @@
+6                     
+5                XXXXX
+       XXXXX     XXXXX
+4      XXXXX     XXXXX
+3      XXXXX     XXXXX
+2      XXXXXXXXXXXXXXX
+1      XXXXXXXXXXXXXXX
+  -1   1    3    4    6    

@@ -1,0 +1,8 @@
+10                                     
+ 8                         XXXXXXXXXXXX
+ 7                         XXXXXXXXXXXX
+ 5 ------------            XXXXXXXXXXXX
+ 3             XXXXXXXXXXXXXXXXXXXXXXXX
+ 2             XXXXXXXXXXXXXXXXXXXXXXXX
+ 0             XXXXXXXXXXXXXXXXXXXXXXXX
+   0           1           2           

@@ -1,22 +1,35 @@
 {
   "name": "babar",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "CLI bar charts",
   "main": "lib/babar.js",
   "types": "lib/babar.d.ts",
   "type": "commonjs",
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": ">=26.13"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "26.13.1",
+      "onFail": "download"
+    }
+  },
   "scripts": {
     "build": "npm run build:bundle && npm run build:types",
-    "build:bundle": "esbuild src/babar.ts --bundle --platform=node --format=cjs --minify --footer:js=\"module.exports=module.exports.default??module.exports;\" --outfile=lib/babar.js",
+    "build:bundle": "esbuild src/babar.ts --bundle --platform=node --format=cjs --minify --target=node26 --footer:js=\"module.exports.babar=module.exports.default=module.exports;\" --outfile=lib/babar.js",
     "build:types": "tsc",
+    "typecheck": "tsc -p tsconfig.test.json",
     "clean": "rimraf lib coverage",
     "preversion": "npm run clean",
     "version": "npm run build",
-    "postversion": "git push && git push --tags && npm run clean",
-    "prepublish": "npm run clean && npm run build",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "postversion": "npm run clean",
+    "prepack": "npm run build",
+    "test": "npm run build && vitest run",
+    "test:watch": "vitest"
   },
   "repository": {
     "type": "git",

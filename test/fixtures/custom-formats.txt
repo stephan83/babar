@@ -1,0 +1,6 @@
+6.0 req/s                               
+4.3 req/s                         XXXXXX
+2.7 req/s       XXXXXXXXXXXX      XXXXXX
+1.0 req/s       XXXXXXXXXXXX      XXXXXX
+          d0    d1    d2    d3    d4    
+          min 1.0 req/s  avg 3.6 req/s

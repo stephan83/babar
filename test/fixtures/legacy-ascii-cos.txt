@@ -1,0 +1,15 @@
+ 1.0                                                                            
+ 0.8 XXX                                                                     XXX
+ 0.7 XXXXXXXX                                                           XXXXXXXX
+ 0.5 XXXXXXXXXX                                                       XXXXXXXXXX
+ 0.4 XXXXXXXXXXXXX                                                  XXXXXXXXXXXX
+ 0.2 XXXXXXXXXXXXXXX                                             XXXXXXXXXXXXXXX
+ 0.1 XXXXXXXXXXXXXXXX                                           XXXXXXXXXXXXXXXX
+-0.1 XXXXXXXXXXXXXXXXXX                                       XXXXXXXXXXXXXXXXXX
+-0.2 XXXXXXXXXXXXXXXXXXXX                                   XXXXXXXXXXXXXXXXXXXX
+-0.4 XXXXXXXXXXXXXXXXXXXXXX                               XXXXXXXXXXXXXXXXXXXXXX
+-0.5 XXXXXXXXXXXXXXXXXXXXXXXX                           XXXXXXXXXXXXXXXXXXXXXXXX
+-0.7 XXXXXXXXXXXXXXXXXXXXXXXXXX                       XXXXXXXXXXXXXXXXXXXXXXXXXX
+-0.8 XXXXXXXXXXXXXXXXXXXXXXXXXXXXX                 XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+-1.0 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+     0.0 0.3 0.7 1.0 1.4 1.7 2.0 2.4 2.7 3.1 3.4 3.7 4.1 4.4 4.8 5.1 5.4 5.8 

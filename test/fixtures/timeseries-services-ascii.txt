@@ -1,0 +1,16 @@
+     requests per hour, by service
+  6k                                                                         
+5.5k                            X                                            
+4.9k                         X  X  X                                         
+4.4k                         X  X  X                                         
+3.8k                         X  X  X                                         
+3.3k                      X  X  X  X  X                                      
+2.7k                      X  X  X  X  X                  O  O  O             
+2.2k                      X  X  X  X  X  X            O  O  O  O  O          
+1.6k                   X  X  X  XO XO X  X         O  O XO XO XO  O  O       
+1.1k                   X  X  XO XO XO XO X  X  XO XO XO XO XO XO XO XO  O    
+ 547             X  X  X  XO XO XO XO XO XO XO XO XO XO XO XO XO XO XO XO XO 
+   0 X  X  X  X  X  XO XO XO XO XO XO XO XO XO XO XO XO XO XO XO XO XO XO XO 
+     00:00 02:00 04:00 06:00 08:00 10:00 12:00 14:00 16:00 18:00 20:00 22:00 
+     X checkout  min 800  avg 2.3k  max 6k
+     O search    min 300  avg 1.6k  max 3.4k

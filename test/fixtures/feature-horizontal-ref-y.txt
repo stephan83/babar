@@ -1,0 +1,5 @@
+0 ...................|......................... 10
+1 XXXXXXXXXXXXXXXXXXXXXXXXXX................... 50
+2 XXXXXXXXXXXXX......|......................... 30
+3 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 80
+4 XXXXXX.............|......................... 20

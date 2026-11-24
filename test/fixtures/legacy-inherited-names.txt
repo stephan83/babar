@@ -1,0 +1,5 @@
+9 function String() { [native code] }function String() { [native code] }
+6 ,,
+4 ,,
+1 function String() { [native code] }function String() { [native code] }function String() { [native code] }function String() { [native code] },,
+  1  2  3  

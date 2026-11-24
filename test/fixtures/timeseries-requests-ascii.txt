@@ -1,0 +1,14 @@
+     requests per hour
+  6k                                                                         
+5.4k                            XXX                                          
+4.8k                         XXXXXXXXX                                       
+4.2k                         XXXXXXXXX                                       
+3.6k                         XXXXXXXXX                                       
+  3k                      XXXXXXXXXXXXXXX                                    
+2.4k                      XXXXXXXXXXXXXXX                                    
+1.8k                   XXXXXXXXXXXXXXXXXXXXX               XXX               
+1.2k                   XXXXXXXXXXXXXXXXXXXXXXXX   XXXXXXXXXXXXXXXXXXXXX      
+ 602                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+   0 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+     00:00 02:00 04:00 06:00 08:00 10:00 12:00 14:00 16:00 18:00 20:00 22:00 
+     min 800  avg 2.3k  max 6k
