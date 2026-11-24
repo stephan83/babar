@@ -12,7 +12,7 @@ function section(title) {
 // ─────────────────────────────────────────────────────────────────────────────
 section('1. just above the floor — bar cap sitting exactly at the grid bottom');
 // All values cluster just above minY so the bars are 1–2 rows tall max.
-// Tests that partial blocks render correctly at very low heights.
+// Shows the caps of very short bars.
 var barelyAbove = [];
 for (var i = 0; i < 40; i++) {
   barelyAbove.push([i, 100 + Math.sin(i * 0.4) * 0.9]);
@@ -30,7 +30,7 @@ console.log(babar(barelyAbove, {
 
 // ─────────────────────────────────────────────────────────────────────────────
 section('2. just below the ceiling — bar cap touching the top row');
-// Values crowd the top, testing that ▇/█ at the topmost row don't overflow.
+// Values crowd the top row.
 var nearCeiling = [];
 for (var i = 0; i < 40; i++) {
   nearCeiling.push([i, 99 + Math.cos(i * 0.3) * 0.95]);
@@ -47,7 +47,10 @@ console.log(babar(nearCeiling, {
 }));
 
 // ─────────────────────────────────────────────────────────────────────────────
-section('3. single point — minimum viable dataset');
+// Sections 3 to 5 use the options of 0.2.3 only, so they print what 0.2.3
+// printed for these inputs (NaN labels, no bar). Any option added since, like
+// style: 'braille' or direction: 'horizontal', draws them properly.
+section('3. single point — as 0.2.3 printed it');
 console.log(babar([[0, 42]], {
   caption: 'single point',
   color: 'yellow',
@@ -57,7 +60,7 @@ console.log(babar([[0, 42]], {
 }));
 
 // ─────────────────────────────────────────────────────────────────────────────
-section('4. all identical Y — flat chart (diff = 0)');
+section('4. all identical Y — flat chart (diff = 0), as 0.2.3 printed it');
 console.log(babar([[0,7],[1,7],[2,7],[3,7],[4,7],[5,7]], {
   caption: 'all values = 7',
   color: 'green',
@@ -67,7 +70,7 @@ console.log(babar([[0,7],[1,7],[2,7],[3,7],[4,7],[5,7]], {
 }));
 
 // ─────────────────────────────────────────────────────────────────────────────
-section('5. single unique X with many Y values — diffX = 0');
+section('5. single unique X with many Y values — diffX = 0, as 0.2.3 printed it');
 console.log(babar([[5,1],[5,3],[5,7],[5,2],[5,9]], {
   caption: 'all points at x=5 (avg=4.4)',
   color: 'blue',
@@ -157,14 +160,14 @@ console.log(babar(spiky, {
 }));
 
 // ─────────────────────────────────────────────────────────────────────────────
-section('12. sub-row precision showcase — staircase through all 8 block levels');
+section('12. sub-row precision — staircase: a bar cap is _, ▄ or a full cell');
 // Build a staircase so each bar cap falls exactly at k/8 fractions
 var stairPts = [];
 for (var i = 0; i < 9; i++) {
   stairPts.push([i, i / 8]);   // 0/8, 1/8, 2/8 … 8/8
 }
 console.log(babar(stairPts, {
-  caption: 'staircase: each bar cap at k/8 — shows ▁▂▃▄▅▆▇█',
+  caption: 'staircase: each bar cap at k/8',
   color: 'cyan',
   grid: 'grey',
   width: 72,
