@@ -446,7 +446,7 @@ The bundle is built with `--target=node22`, the `engines` of the package (`>=22`
 npm install
 npm run build       # esbuild bundle and type declarations in lib/
 npm test            # builds, then vitest: compares the renderings with test/fixtures
-npm run typecheck   # tsc on the source and the tests
+npm run typecheck   # writes lib/babar.d.ts, then tsc on the source, the tests and the example
 ```
 
 The `legacy-` fixtures were rendered by the 0.2.3 build and are never rewritten. A plain `npm test` never writes a fixture: a missing one fails. `UPDATE_FIXTURES=1 npm test` writes the fixtures of the other cases: review the diff before committing it.

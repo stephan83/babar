@@ -22,7 +22,7 @@
     "build": "npm run build:bundle && npm run build:types",
     "build:bundle": "esbuild src/babar.ts --bundle --platform=node --format=cjs --minify --target=node22 --footer:js=\"module.exports.babar=module.exports.default=module.exports;\" --outfile=lib/babar.js",
     "build:types": "tsc",
-    "typecheck": "tsc -p tsconfig.test.json",
+    "typecheck": "npm run build:types && tsc -p tsconfig.test.json",
     "clean": "rimraf lib coverage",
     "preversion": "npm run clean",
     "version": "npm run build",
