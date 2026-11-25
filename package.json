@@ -27,6 +27,7 @@
     "preversion": "npm run clean",
     "version": "npm run build",
     "postversion": "npm run clean",
+    "prepublishOnly": "npm audit --audit-level=high --offline=false --prefer-offline=false --audit=true --omit=",
     "prepack": "npm run build",
     "test": "npm run build && vitest run",
     "test:watch": "vitest"

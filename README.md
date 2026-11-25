@@ -451,7 +451,7 @@ npm run typecheck   # tsc on the source and the tests
 
 The `legacy-` fixtures were rendered by the 0.2.3 build and are never rewritten. A plain `npm test` never writes a fixture: a missing one fails. `UPDATE_FIXTURES=1 npm test` writes the fixtures of the other cases: review the diff before committing it.
 
-`npm pack` and `npm publish` build `lib/` first (`prepack`).
+`npm pack` and `npm publish` build `lib/` first (`prepack`). `npm publish` fails while `npm audit` reports a high or critical advisory, in dev or prod dependencies, or when the registry cannot be reached (`prepublishOnly`, which pins `offline`, `audit` and `omit` so an `.npmrc` cannot turn it off). `npm publish --ignore-scripts` and `npm publish <tarball>` skip it: publish from the clone.
 
 `node examples/features.js`, `node examples/timeseries.js` and the other examples need a clone of the repository and `npm run build`.
 
