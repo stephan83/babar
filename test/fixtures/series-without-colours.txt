@@ -1,0 +1,7 @@
+5                             
+4        XXX                  
+3        XXXOOO               
+1        XXXOOO XXXOOO        
+0 XXXOOO XXXOOO XXXOOO    OOO 
+  0      1      2      3      
+  X service-a  O service-b

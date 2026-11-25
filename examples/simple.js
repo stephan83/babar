@@ -40,7 +40,7 @@ console.log(babar([
 ], {
   width: 80,
   grid: 'blue',
-  height: 10,
+  height: 11,
   color: 'yellow',
   maxY: 100
 }));

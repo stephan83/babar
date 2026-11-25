@@ -1,17 +1,35 @@
 {
   "name": "babar",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "CLI bar charts",
   "main": "lib/babar.js",
+  "types": "lib/babar.d.ts",
+  "type": "commonjs",
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "26.13.1",
+      "onFail": "download"
+    }
+  },
   "scripts": {
-    "build:lib": "coffee -o lib -c src/babar.coffee",
+    "build": "npm run build:bundle && npm run build:types",
+    "build:bundle": "esbuild src/babar.ts --bundle --platform=node --format=cjs --minify --target=node22 --footer:js=\"module.exports.babar=module.exports.default=module.exports;\" --outfile=lib/babar.js",
+    "build:types": "tsc",
+    "typecheck": "tsc -p tsconfig.test.json",
     "clean": "rimraf lib coverage",
     "preversion": "npm run clean",
-    "version": "npm run build:lib",
-    "postversion": "git push && git push --tags && npm run clean",
-    "prepublish": "npm run clean && npm run build:lib",
-    "dev": "coffee --watch -o lib/ -c src/babar.coffee",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "version": "npm run build",
+    "postversion": "npm run clean",
+    "prepack": "npm run build",
+    "test": "npm run build && vitest run",
+    "test:watch": "vitest"
   },
   "repository": {
     "type": "git",
@@ -29,11 +47,11 @@
   "bugs": {
     "url": "https://github.com/stephan83/babar/issues"
   },
-  "dependencies": {
-    "colors": "~1.4.0"
-  },
   "devDependencies": {
-    "coffeescript": "~1.6.3",
-    "rimraf": "^3.0.2"
+    "@types/node": "^22.20.5",
+    "esbuild": "^0.28.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
   }
 }

@@ -1,0 +1,8 @@
+1000                         
+ 316                   XXXXXX
+ 100                   XXXXXX
+  32             XXXXXXXXXXXX
+  10             XXXXXXXXXXXX
+   3       XXXXXXXXXXXXXXXXXX
+   1       XXXXXXXXXXXXXXXXXX
+     0     1     2     3     

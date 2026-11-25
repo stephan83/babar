@@ -1,0 +1,15 @@
+     y = sin(x)
+ 1.0                                                                            
+ 0.8                XXXXXXX                                                     
+ 0.7            XXXXXXXXXXXXXXXX                                                
+ 0.5         XXXXXXXXXXXXXXXXXXXXX                                              
+ 0.3       XXXXXXXXXXXXXXXXXXXXXXXXXX                                           
+ 0.2     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                         
+ 0.0  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                       
+-0.2 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                    X
+-0.3 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                 XX
+-0.5 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                            XXXXX
+-0.7 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                        XXXXXXX
+-0.8 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                   XXXXXXXXX
+-1.0 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX            XXXXXXXXXXXXX
+     0.0 0.3 0.7 1.0 1.4 1.7 2.0 2.4 2.7 3.1 3.4 3.7 4.1 4.4 4.8 5.1 5.4 5.8 
