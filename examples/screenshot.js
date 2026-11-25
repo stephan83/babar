@@ -10,6 +10,12 @@ console.log(babar(points, {
   grid: 'grey',
   caption: 'y = cos(x)'}));
 
+console.log(babar(points, {
+  style: 'braille',
+  color: 'green',
+  caption: 'y = cos(x)'
+}));
+
 console.log(babar([[0, 1], [1, 5], [2, 5], [3, 1], [4, 6]], {
   color: 'blue',
   grid: 'grey',
