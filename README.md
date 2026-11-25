@@ -11,6 +11,7 @@ While it isn't an advanced charting library, it can be useful to get a rought id
 * whether some data is random or not
 * whether some data is linear, exponential, etc ...
 
+![Sample](https://raw.githubusercontent.com/stephan83/babar/master/img/bar.png)
 ### Features:
 
 * easy to use
