@@ -6,6 +6,6 @@
     "emitDeclarationOnly": false,
     "declaration": false
   },
-  "include": ["src", "test"],
+  "include": ["src", "test", "examples/typescript.mts"],
   "exclude": ["node_modules", "lib"]
 }

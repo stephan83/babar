@@ -85,6 +85,8 @@ import babar = require('babar'); // the types are then babar.Options, babar.Poin
 
 The exported types are `Options`, `Point`, `CategoricalPoint`, `AnyPoint`, `Series`, `Color`, `Style`, `Aggregation`, `YScale`, `Direction` and `Unit`.
 
+`examples/typescript.mts` draws a time series, then two series, with typed options and points. `npm run typecheck` checks it, and Node 22.18 or later runs it as is: `node examples/typescript.mts`.
+
 ## Options
 
 The options of 0.2.3:
